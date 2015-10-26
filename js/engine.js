@@ -133,9 +133,20 @@ var Engine = (function(global) {
                  * we're using them over and over.
                  */
                 ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);
+                // draws the score onto canvas to tally points
+                ctx.font = "18pt Impact";
+                ctx.strokeStyle="#000000";
+                ctx.strokeText("Score: "+score, 8, 100);
+                ctx.font = "18pt Impact";
+                ctx.fillStyle="#ffffff";
+                ctx.fillText("Score: " + score, 8, 100);
             }
+                // draw the hearts onto the canvas to display lives
+            for (hearts = 1; hearts <= player.playerLives; hearts++)
+                {
+                    ctx.drawImage(Resources.get("images/Heart.png"), hearts * /*location on board*/ (50)+280, 40, /* scale ratio of hearts to original image */ 50, 85);
+                }
         }
-
 
         renderEntities();
     }
@@ -172,7 +183,8 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/char-boy.png',
+        'images/Heart.png'
     ]);
     Resources.onReady(init);
 
