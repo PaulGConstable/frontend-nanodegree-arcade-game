@@ -7,7 +7,7 @@ var Enemy = function(speed) {
     this.sprite = 'images/enemy-bug.png';
     this.x = -101; // value
     this.y = 65;
-    this.speed = speed * Math.random()*100;
+    this.speed = speed * Math.random()*300;
     // size of enemy graphic
     this.width = 101;
     this.height = 171;
